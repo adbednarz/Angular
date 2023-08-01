@@ -1,0 +1,34 @@
+<h1>Currency Information</h1>
+
+<form [formGroup]="currencyRequestForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Currency code:</mat-label>
+    <input matInput formControlName="currency" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Name:</mat-label>
+    <input matInput formControlName="name" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="onClick()" [disabled]="currencyRequestForm.invalid">Confirm</button>
+</form>
+
+<div *ngIf="currencyResponse !== null" class="result">
+  <h2>Current currency value:</h2>
+  <div>{{ currencyResponse.value }}</div>
+</div>
+
+<div class="history">
+  <button mat-raised-button color="primary" routerLink="/currency/requests-history">View currency requests history</button>
+</div>
+
+
+
+
+
+
+
+
+
+
